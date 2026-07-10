@@ -2,12 +2,13 @@
 run_pipeline.py — Daily batch wrapper. Runs the full pipeline in the
 correct dependency order:
 
-  1. stocktwits_scraper.py (scrapers/) — pull new posts
-  2. compute_week_relative.py — link records to earnings events + week
-  3. finbert_vader_scorer.py  — score unlabeled rows
-  4. relevance_flagger.py     — flag unflagged rows
-  5. build_confidence_trajectory.py — extend Bayesian trajectories
-  6. resolve_signal.py        — resolve per-event signal at week -2
+    1. stocktwits_scraper.py (scrapers/) — pull new posts
+    2. compute_week_relative.py — link records to earnings events + week
+    3. finbert_vader_scorer.py  — score unlabeled rows
+    4. relevance_flagger.py     — flag unflagged rows
+    5. build_confidence_trajectory.py — extend Bayesian trajectories
+    6. resolve_signal.py        — resolve per-event signal at week -2
+    7. pull_iv_history.py       — snapshot ATM IV per ticker for IV rank history
 
 Each step runs independently — a failure is logged and the pipeline
 continues to the next step rather than aborting. Since every
@@ -37,6 +38,7 @@ STEPS = [
     ("flag relevance", "relevance_flagger"),
     ("build trajectories", "build_confidence_trajectory"),
     ("resolve signals", "resolve_signal"),
+    ("pull IV history", "pull_iv_history"),
 ]
 
 
