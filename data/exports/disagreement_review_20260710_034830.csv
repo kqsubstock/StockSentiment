@@ -1,0 +1,63 @@
+ticker,raw_text,finbert_raw,vader_raw,sentiment_score,label,disagreement_size
+CRWD,"$PANW $FTNT $CRWD  
+ 
+3 Cybersecurity giants. Very interesting companies but certainly, I see them with very high valuations and too much hype. Their numbers are interesting and good, specially Fortintet numbers. I think that all three of em are overvalued. I wouldn&#39;t be surprised if sooner than later a drop appears.  
+ 
+Do not mistake me, a natural and healthy drop after a very intense positive performance.  
+ 
+When? I don&#39;t know, but I think in the near future we could see come corrections.  
+ 
+Anyways, besides my opinions, I like them and I would like to add a little bit of them to my portfolio. (Do not take this as a recommendation to invest)",-0.589551568031311,0.9856,0.04050905918121345,neutral,1.575151568031311
+CRWD,"$PANW $FTNT $CRWD  
+ 
+3 Cybersecurity giants. Very interesting companies but certainly, I see them with very high valuations and too much hype. Their numbers are interesting and good, specially Fortintet numbers. I think that all three of em are overvalued. I wouldn&#39;t be surprised if sooner than later a drop appears.  
+ 
+Do not mistake me, a natural and healthy drop after a very intense positive performance.  
+ 
+When? I don&#39;t know, but I think in the near future we could see come corrections.  
+ 
+Anyways, besides my opinions, I like them and I would like to add a little bit of them to my portfolio. (Do not take this as a recommendation to invest)",-0.589551568031311,0.9856,0.04050905918121345,neutral,1.575151568031311
+NVDA,"NVIDIA pushed back against reports claiming its Kyber NVL144 AI rack system—built around 144 next-generation Rubin Ultra GPUs—had been delayed until 2028, stating that development remains on schedule. The denial eased investor concerns after the earlier report triggered a broad semiconductor selloff on fears that rivals such as AMD and Google could gain market share in AI servers if NVIDIA&#39;s roadmap slipped. 
+Adding to the positive sentiment, The Information reported that China may allow leading AI companies, including Alibaba, ByteDance, and DeepSeek, to purchase limited quantities of NVIDIA&#39;s H200 AI chips, potentially providing a modest boost to demand despite ongoing U.S. export restrictions. 
+Goldman Sachs also reiterated a bullish view, arguing that NVIDIA&#39;s forward P/E of roughly 21.7x is attractive, trading near the broader S&amp;P 500 average and well below the company&#39;s own five-year historical multiple.  
+ $NVDA",-0.6781541109085083,0.872,-0.05809246654510497,neutral,1.5501541109085082
+ADBE,$ADBE recovery is good so far but volume dying. feels like a breather is coming imo.,-0.680268406867981,0.6369,-0.15340104412078853,neutral,1.317168406867981
+ADBE,$ADBE recovery is good so far but volume dying. feels like a breather is coming imo.,-0.680268406867981,0.6369,-0.15340104412078853,neutral,1.317168406867981
+AMZN,"Mag 7 capex keeps running hot. 
+ 
+$AMZN dropping $5B in the Philippines for AWS   
+$META putting $10B into Canada for an AI data center 
+ 
+That’s on top of the hundreds of billions already committed.   
+The spend is still accelerating. 😱",0.7045446634292603,-0.4404,0.24656679805755613,neutral,1.1449446634292602
+AMZN,"Mag 7 capex keeps running hot. 
+ 
+$AMZN dropping $5B in the Philippines for AWS   
+$META putting $10B into Canada for an AI data center 
+ 
+That’s on top of the hundreds of billions already committed.   
+The spend is still accelerating. 😱",0.7045446634292603,-0.4404,0.24656679805755613,neutral,1.1449446634292602
+AAPL,"&quot;China’s consumer prices grew slower than expected in June, while wholesale inflation accelerated, as elevated energy costs continued to sap domestic demand.&quot;
+
+$SPY $TSLA $MU $AAPL $NVDA",-0.8588241934776306,0.2732,-0.4060145160865784,bearish,1.1320241934776307
+NVDA,"&quot;China’s consumer prices grew slower than expected in June, while wholesale inflation accelerated, as elevated energy costs continued to sap domestic demand.&quot;
+
+$SPY $TSLA $MU $AAPL $NVDA",-0.8588241934776306,0.2732,-0.4060145160865784,bearish,1.1320241934776307
+TSLA,"&quot;China’s consumer prices grew slower than expected in June, while wholesale inflation accelerated, as elevated energy costs continued to sap domestic demand.&quot;
+
+$SPY $TSLA $MU $AAPL $NVDA",-0.8588241934776306,0.2732,-0.4060145160865784,bearish,1.1320241934776307
+AAPL,"&quot;China’s consumer prices grew slower than expected in June, while wholesale inflation accelerated, as elevated energy costs continued to sap domestic demand.&quot;
+
+$SPY $TSLA $MU $AAPL $NVDA",-0.8588241934776306,0.2732,-0.4060145160865784,bearish,1.1320241934776307
+AAPL,"U.S. stock index futures were little changed Wednesday night after a mostly lower Wall Street session, as investors weighed escalating tensions between the U.S. and Iran that threatened to derail a temporary peace agreement. S&amp;P 500 futures were flat, Nasdaq 100 futures rose 0.2%, and Dow futures were largely unchanged. 
+Earlier, the Dow fell 1.1%, the S&amp;P 500 slipped 0.3%, while the Nasdaq gained 0.2%, supported by strength in semiconductor stocks. Investor sentiment weakened after President Donald Trump said the ceasefire with Iran was effectively over, followed by reports of new U.S. strikes on Iranian targets and warnings of retaliation from Tehran. 
+The renewed conflict pushed oil prices sharply higher, raising concerns about disruptions to shipping through the Strait of Hormuz and adding to inflation worries. Meanwhile, technology stocks outperformed, with Broadcom rallying after announcing a major chip supply agreement with Apple, while Nvidia also advanced 
+ $AVGO $AAPL $NVDA  $IWM",-0.9647395610809326,0.144,-0.5212437366485596,bearish,1.1087395610809325
+NVDA,"U.S. stock index futures were little changed Wednesday night after a mostly lower Wall Street session, as investors weighed escalating tensions between the U.S. and Iran that threatened to derail a temporary peace agreement. S&amp;P 500 futures were flat, Nasdaq 100 futures rose 0.2%, and Dow futures were largely unchanged. 
+Earlier, the Dow fell 1.1%, the S&amp;P 500 slipped 0.3%, while the Nasdaq gained 0.2%, supported by strength in semiconductor stocks. Investor sentiment weakened after President Donald Trump said the ceasefire with Iran was effectively over, followed by reports of new U.S. strikes on Iranian targets and warnings of retaliation from Tehran. 
+The renewed conflict pushed oil prices sharply higher, raising concerns about disruptions to shipping through the Strait of Hormuz and adding to inflation worries. Meanwhile, technology stocks outperformed, with Broadcom rallying after announcing a major chip supply agreement with Apple, while Nvidia also advanced 
+ $AVGO $AAPL $NVDA  $IWM",-0.9647395610809326,0.144,-0.5212437366485596,bearish,1.1087395610809325
+AAPL,"U.S. stock index futures were little changed Wednesday night after a mostly lower Wall Street session, as investors weighed escalating tensions between the U.S. and Iran that threatened to derail a temporary peace agreement. S&amp;P 500 futures were flat, Nasdaq 100 futures rose 0.2%, and Dow futures were largely unchanged. 
+Earlier, the Dow fell 1.1%, the S&amp;P 500 slipped 0.3%, while the Nasdaq gained 0.2%, supported by strength in semiconductor stocks. Investor sentiment weakened after President Donald Trump said the ceasefire with Iran was effectively over, followed by reports of new U.S. strikes on Iranian targets and warnings of retaliation from Tehran. 
+The renewed conflict pushed oil prices sharply higher, raising concerns about disruptions to shipping through the Strait of Hormuz and adding to inflation worries. Meanwhile, technology stocks outperformed, with Broadcom rallying after announcing a major chip supply agreement with Apple, while Nvidia also advanced 
+ $AVGO $AAPL $NVDA  $IWM",-0.9647395610809326,0.144,-0.5212437366485596,bearish,1.1087395610809325

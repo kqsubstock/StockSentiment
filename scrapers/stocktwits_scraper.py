@@ -62,6 +62,7 @@ def parse_message(ticker, msg):
     return {
         "ticker": ticker,
         "source": "stocktwits",
+        "source_message_id": str(msg["id"]),
         "timestamp": msg["created_at"],
         "raw_text": msg["body"],
         "sentiment_score": score,
@@ -73,10 +74,10 @@ def insert_records(conn, records):
     cur = conn.cursor()
     cur.executemany(
         """
-        INSERT INTO sentiment_records
-            (ticker, source, timestamp, raw_text, sentiment_score, label, scored_by)
+        INSERT OR IGNORE INTO sentiment_records
+            (ticker, source, source_message_id, timestamp, raw_text, sentiment_score, label, scored_by)
         VALUES
-            (:ticker, :source, :timestamp, :raw_text, :sentiment_score, :label, :scored_by)
+            (:ticker, :source, :source_message_id, :timestamp, :raw_text, :sentiment_score, :label, :scored_by)
         """,
         records,
     )
@@ -96,7 +97,7 @@ def export_to_csv(records, run_timestamp):
     filename = f"stocktwits_{run_timestamp}.csv"
     filepath = EXPORT_DIR / filename
 
-    fieldnames = ["ticker", "source", "timestamp", "raw_text", "sentiment_score", "label", "scored_by"]
+    fieldnames = ["ticker", "source", "source_message_id", "timestamp", "raw_text", "sentiment_score", "label", "scored_by"]
     with open(filepath, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
