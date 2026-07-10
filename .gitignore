@@ -1,0 +1,6 @@
+.env
+__pycache__/
+*.pyc
+data/pipeline.db
+data/exports/*.csv
+.vscode/
