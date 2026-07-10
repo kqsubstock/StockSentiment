@@ -19,6 +19,10 @@ CREATE TABLE IF NOT EXISTS sentiment_records (
     vader_raw               REAL,       -- VADER-only compound score, pre-blend (-1 to 1)
     idiom_flag              INTEGER DEFAULT 0,   -- 1 if raw_text contains a known VADER-miscalibrated word (crush/beat family)
     disagreement_flag       INTEGER DEFAULT 0,   -- 1 if |finbert_raw - vader_raw| > 1.0 — models disagree sharply, blend may be unreliable
+    cashtag_count           INTEGER,    -- number of distinct tickers mentioned in raw_text
+    macro_keyword_hit       INTEGER,    -- 1 if raw_text contains macro-only language (Fed, CPI, etc.)
+    earnings_keyword_hit    INTEGER,    -- 1 if raw_text contains earnings-adjacent language (EPS, guidance, etc.)
+    relevance_flag          INTEGER,    -- 1 if likely NOT about this company's earnings specifically
     label                   TEXT CHECK (label IN ('bullish', 'bearish', 'neutral')),
     week_relative           INTEGER,
     earnings_event_id       INTEGER REFERENCES earnings_events(id),
