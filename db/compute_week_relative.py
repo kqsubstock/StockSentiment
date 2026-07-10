@@ -137,5 +137,9 @@ def compute_week_relative():
     conn.close()
 
 
-if __name__ == "__main__":
+def run():
     compute_week_relative()
+
+
+if __name__ == "__main__":
+    run()
