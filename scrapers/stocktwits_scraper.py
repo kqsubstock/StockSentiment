@@ -204,9 +204,11 @@ def run():
     conn = sqlite3.connect(DB_PATH)
     tickers = get_active_tickers(conn)
     run_timestamp = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
+    start_time = datetime.now()
 
     all_records = []
     print(f"Pulling StockTwits data for {len(tickers)} tickers...\n")
+    print(f"Start time: {start_time}\n{'='*70}")
 
     for ticker in tickers:
         try:
@@ -234,6 +236,11 @@ def run():
     print(f"\n{inserted} records inserted into sentiment_records.")
     if csv_path:
         print(f"CSV export written to: {csv_path}")
+
+    end_time = datetime.now()
+    duration = end_time - start_time
+
+    print(f"Duration: {duration}")
 
     conn.close()
 

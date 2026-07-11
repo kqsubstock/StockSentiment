@@ -1,0 +1,160 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+======================================================================
+Pipeline run started: 2026-07-11T17:00:02.047574
+======================================================================
+
+--- link weeks (compute_week_relative.py) ---
+Processed 4650 sentiment_records rows.
+  Linked:   4650
+  Unlinked: 0 (no future earnings event found for that ticker)
+
+week_relative distribution:
+   -13: 70
+   -12: 331
+   -11: 50
+   -10: 386
+    -9: 222
+    -8: 141
+    -7: 537
+    -6: 217
+    -5: 125
+    -4: 834
+    -3: 1279
+    -2: 409
+    -1: 49
+
+--- score sentiment (finbert_vader_scorer.py) ---
+Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]Loading weights: 100%|##########| 201/201 [00:00<00:00, 18417.77it/s]
+Scoring 73 unlabeled records...
+
+Scored 73 records. 3 flagged for idiom risk, 2 flagged for model disagreement.
+
+Label distribution (this run):
+  bearish    398
+  bullish    634
+  neutral    1853
+
+--- flag relevance (relevance_flagger.py) ---
+Checking relevance for 107 unflagged records...
+
+Flagged 43 of 107 records as low-relevance.
+
+Flagged rate by ticker:
+  AAPL    107/ 430  (24.9%)
+  ABNB     75/ 331  (22.7%)
+  ADBE     61/ 338  (18.0%)
+  AMZN    165/ 375  (44.0%)
+  CRWD    110/ 350  (31.4%)
+  DIS      61/ 335  (18.2%)
+  META    124/ 429  (28.9%)
+  MSFT     55/ 377  (14.6%)
+  NKE      34/ 345  (9.9%)
+  NVDA    166/ 487  (34.1%)
+  PLTR     64/ 415  (15.4%)
+  TSLA    114/ 438  (26.0%)
+
+--- build trajectories (build_confidence_trajectory.py) ---
+Building confidence trajectories for 33 earnings events...
+
+  AAPL   event_id=   3  2 weeks with evidence, latest posterior_mean=0.564
+  ABNB   event_id=  19  3 weeks with evidence, latest posterior_mean=0.633
+  ABNB   event_id=  20  10 weeks with evidence, latest posterior_mean=0.743
+  ADBE   event_id=  28  3 weeks with evidence, latest posterior_mean=0.707
+  AMZN   event_id=  60  2 weeks with evidence, latest posterior_mean=0.846
+  CRWD   event_id=  25  3 weeks with evidence, latest posterior_mean=0.716
+  DIS    event_id=  15  3 weeks with evidence, latest posterior_mean=0.653
+  META   event_id=  59  2 weeks with evidence, latest posterior_mean=0.744
+  MSFT   event_id=  58  2 weeks with evidence, latest posterior_mean=0.515
+  NKE    event_id=  61  2 weeks with evidence, latest posterior_mean=0.756
+  NVDA   event_id=  12  2 weeks with evidence, latest posterior_mean=0.776
+  PLTR   event_id=  17  1 weeks with evidence, latest posterior_mean=0.731
+  TSLA   event_id=   9  2 weeks with evidence, latest posterior_mean=0.679
+
+13/33 events had at least one week of evidence.
+0 rows inserted into confidence_trajectory.
+
+--- resolve signals (resolve_signal.py) ---
+Resolving signals for 33 earnings events...
+
+  AAPL   event_id=  1  no_bet    conf=  N/A  evidence=  0  (no evidence by week -2)
+  AAPL   event_id=  2  no_bet    conf=  N/A  evidence=  0  (no evidence by week -2)
+  AAPL   event_id=  3  no_bet    conf=0.558  evidence= 82  (no_bet, as of week -3)
+  ABNB   event_id= 18  no_bet    conf=  N/A  evidence=  0  (no evidence by week -2)
+  ABNB   event_id= 19  bullish   conf=0.728  evidence= 33  (bullish, as of week -2)
+  ABNB   event_id= 20  bullish   conf=0.768  evidence= 49  (bullish, as of week -4)
+  ADBE   event_id= 26  no_bet    conf=  N/A  evidence=  0  (no evidence by week -2)
+  ADBE   event_id= 27  no_bet    conf=  N/A  evidence=  0  (no evidence by week -2)
+  ADBE   event_id= 28  bullish   conf=0.670  evidence= 74  (bullish, as of week -9)
+  AMZN   event_id=  6  no_bet    conf=  N/A  evidence=  0  (no evidence by week -2)
+  AMZN   event_id= 60  bullish   conf=0.810  evidence= 78  (bullish, as of week -3)
+  CRWD   event_id= 23  no_bet    conf=  N/A  evidence=  0  (no evidence by week -2)
+  CRWD   event_id= 24  no_bet    conf=  N/A  evidence=  0  (no evidence by week -2)
+  CRWD   event_id= 25  bullish   conf=0.705  evidence= 77  (bullish, as of week -8)
+  DIS    event_id= 13  no_bet    conf=  N/A  evidence=  0  (no evidence by week -2)
+  DIS    event_id= 14  no_bet    conf=  N/A  evidence=  0  (no evidence by week -2)
+  DIS    event_id= 15  bullish   conf=0.690  evidence= 73  (bullish, as of week -5)
+  META   event_id= 57  no_bet    conf=  N/A  evidence=  0  (no evidence by week -2)
+  META   event_id=  5  no_bet    conf=  N/A  evidence=  0  (no evidence by week -2)
+  META   event_id= 59  bullish   conf=0.681  evidence= 33  (bullish, as of week -3)
+  MSFT   event_id=  4  no_bet    conf=  N/A  evidence=  0  (no evidence by week -2)
+  MSFT   event_id= 58  bullish   conf=0.673  evidence= 38  (bullish, as of week -3)
+  NKE    event_id= 21  no_bet    conf=  N/A  evidence=  0  (no evidence by week -2)
+  NKE    event_id= 22  no_bet    conf=  N/A  evidence=  0  (no evidence by week -2)
+  NKE    event_id= 61  bullish   conf=0.767  evidence= 36  (bullish, as of week -12)
+  NVDA   event_id= 10  no_bet    conf=  N/A  evidence=  0  (no evidence by week -2)
+  NVDA   event_id= 11  no_bet    conf=  N/A  evidence=  0  (no evidence by week -2)
+  NVDA   event_id= 12  bullish   conf=0.728  evidence= 44  (bullish, as of week -7)
+  PLTR   event_id= 16  no_bet    conf=  N/A  evidence=  0  (no evidence by week -2)
+  PLTR   event_id= 17  bullish   conf=0.673  evidence= 41  (bullish, as of week -4)
+  TSLA   event_id=  7  no_bet    conf=  N/A  evidence=  0  (no evidence by week -2)
+  TSLA   event_id=  8  no_bet    conf=  N/A  evidence=  0  (no evidence by week -2)
+  TSLA   event_id=  9  bullish   conf=0.737  evidence= 42  (bullish, as of week -2)
+
+--- resolve outcomes (resolve_earnings_outcomes.py) ---
+Checking 12 unresolved earnings events...
+
+  TSLA   2026-07-22  -- still pending
+  META   2026-07-29  -- still pending
+  MSFT   2026-07-29  -- still pending
+  AAPL   2026-07-30  -- still pending
+  AMZN   2026-07-30  -- still pending
+  PLTR   2026-08-03  -- still pending
+  ABNB   2026-08-05  -- still pending
+  DIS    2026-08-12  -- still pending
+  NVDA   2026-08-26  -- still pending
+  CRWD   2026-09-02  -- still pending
+  ADBE   2026-09-10  -- still pending
+  NKE    2026-09-29  -- still pending
+
+Resolved 0 of 12 checked events.
+
+--- pull IV history (pull_iv_history.py) ---
+AAPL: atm_iv=0.1579, spot=315.32, strike_used=315.0, dte=2
+MSFT: atm_iv=0.2237, spot=385.1, strike_used=385.0, dte=2
+META: atm_iv=0.3780, spot=669.21, strike_used=670.0, dte=2
+AMZN: atm_iv=0.2224, spot=245.34, strike_used=245.0, dte=2
+TSLA: atm_iv=0.3047, spot=407.76, strike_used=407.5, dte=2
+NVDA: atm_iv=0.2421, spot=210.96, strike_used=210.0, dte=2
+DIS: atm_iv=0.2283, spot=95.62, strike_used=96.0, dte=6
+PLTR: atm_iv=0.4711, spot=126.79, strike_used=127.0, dte=6
+ABNB: atm_iv=0.3112, spot=148.62, strike_used=149.0, dte=6
+NKE: atm_iv=0.3003, spot=44.37, strike_used=44.5, dte=6
+CRWD: atm_iv=0.5262, spot=187.18, strike_used=187.5, dte=6
+ADBE: atm_iv=0.4037, spot=223.64, strike_used=222.5, dte=6
+
+======================================================================
+Pipeline summary:
+  [OK    ] link weeks
+  [OK    ] score sentiment
+  [OK    ] flag relevance
+  [OK    ] build trajectories
+  [OK    ] resolve signals
+  [OK    ] resolve outcomes
+  [OK    ] pull IV history
+======================================================================
+
+
+======================================================================
+Pipeline runtime: 0:00:59.092201
+======================================================================

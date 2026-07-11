@@ -64,3 +64,109 @@ Pulling StockTwits data for 12 tickers...
 
 212 records inserted into sentiment_records.
 CSV export written to: C:\Users\kyleq\OneDrive\Documents\StockSentiment\data\exports\stocktwits_20260711_192516.csv
+Pulling StockTwits data for 12 tickers...
+
+  AAPL    11 messages pulled (3 pre-labeled, 1 page)
+  ABNB     0 messages pulled (0 pre-labeled, 1 page)
+  ADBE     1 messages pulled (1 pre-labeled, 1 page)
+  AMZN     1 messages pulled (1 pre-labeled, 1 page)
+  CRWD     0 messages pulled (0 pre-labeled, 1 page)
+  DIS      1 messages pulled (0 pre-labeled, 1 page)
+  META    31 messages pulled (4 pre-labeled, 2 pages)
+  MSFT     9 messages pulled (4 pre-labeled, 1 page)
+  NKE      2 messages pulled (1 pre-labeled, 1 page)
+  NVDA    31 messages pulled (9 pre-labeled, 2 pages)
+  PLTR     3 messages pulled (1 pre-labeled, 1 page)
+  TSLA    31 messages pulled (7 pre-labeled, 2 pages)
+
+107 records inserted into sentiment_records.
+CSV export written to: C:\Users\kyleq\OneDrive\Documents\StockSentiment\data\exports\stocktwits_20260711_201501.csv
+Pulling StockTwits data for 12 tickers...
+
+  AAPL     0 messages pulled (0 pre-labeled, 1 page)
+  ABNB     0 messages pulled (0 pre-labeled, 1 page)
+  ADBE     0 messages pulled (0 pre-labeled, 1 page)
+  AMZN     1 messages pulled (0 pre-labeled, 1 page)
+  CRWD     0 messages pulled (0 pre-labeled, 1 page)
+  DIS      1 messages pulled (0 pre-labeled, 1 page)
+  META    16 messages pulled (2 pre-labeled, 1 page)
+  MSFT     2 messages pulled (1 pre-labeled, 1 page)
+  NKE      0 messages pulled (0 pre-labeled, 1 page)
+  NVDA    31 messages pulled (8 pre-labeled, 2 pages)
+  PLTR     3 messages pulled (0 pre-labeled, 1 page)
+  TSLA    12 messages pulled (7 pre-labeled, 1 page)
+
+56 records inserted into sentiment_records.
+CSV export written to: C:\Users\kyleq\OneDrive\Documents\StockSentiment\data\exports\stocktwits_20260711_210002.csv
+Pulling StockTwits data for 12 tickers...
+
+  AAPL     0 messages pulled (0 pre-labeled, 1 page)
+  ABNB     0 messages pulled (0 pre-labeled, 1 page)
+  ADBE     0 messages pulled (0 pre-labeled, 1 page)
+  AMZN     0 messages pulled (0 pre-labeled, 1 page)
+  CRWD     0 messages pulled (0 pre-labeled, 1 page)
+  DIS      0 messages pulled (0 pre-labeled, 1 page)
+  META     1 messages pulled (0 pre-labeled, 1 page)
+  MSFT     0 messages pulled (0 pre-labeled, 1 page)
+  NKE      0 messages pulled (0 pre-labeled, 1 page)
+  NVDA    31 messages pulled (9 pre-labeled, 2 pages)
+  PLTR     0 messages pulled (0 pre-labeled, 1 page)
+  TSLA     0 messages pulled (0 pre-labeled, 1 page)
+
+20 records inserted into sentiment_records.
+CSV export written to: C:\Users\kyleq\OneDrive\Documents\StockSentiment\data\exports\stocktwits_20260711_210523.csv
+  File "C:\Users\kyleq\OneDrive\Documents\StockSentiment\scrapers\stocktwits_scraper.py", line 210
+    print(f"Run time: " {run_timestamp.isoformat()}\n{'='*70}")
+                                                    ^
+SyntaxError: unexpected character after line continuation character
+  File "C:\Users\kyleq\OneDrive\Documents\StockSentiment\scrapers\stocktwits_scraper.py", line 210
+    print(f"Run time: " {run_timestamp.isoformat()}\n{'='*70}")
+                                                    ^
+SyntaxError: unexpected character after line continuation character
+Pulling StockTwits data for 12 tickers...
+
+Traceback (most recent call last):
+  File "C:\Users\kyleq\OneDrive\Documents\StockSentiment\scrapers\stocktwits_scraper.py", line 243, in <module>
+    run()
+    ~~~^^
+  File "C:\Users\kyleq\OneDrive\Documents\StockSentiment\scrapers\stocktwits_scraper.py", line 210, in run
+    print(f"Run time: {run_timestamp.isoformat()}\n{'='*70}")
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'isoformat'. Did you mean: 'format'?
+Pulling StockTwits data for 12 tickers...
+
+Harvest Time: 2026-07-11 16:11:28.448160
+======================================================================
+  AAPL     0 messages pulled (0 pre-labeled, 1 page)
+  ABNB     0 messages pulled (0 pre-labeled, 1 page)
+  ADBE     0 messages pulled (0 pre-labeled, 1 page)
+  AMZN     0 messages pulled (0 pre-labeled, 1 page)
+  CRWD     0 messages pulled (0 pre-labeled, 1 page)
+  DIS      0 messages pulled (0 pre-labeled, 1 page)
+  META     0 messages pulled (0 pre-labeled, 1 page)
+  MSFT     0 messages pulled (0 pre-labeled, 1 page)
+  NKE      0 messages pulled (0 pre-labeled, 1 page)
+  NVDA     0 messages pulled (0 pre-labeled, 1 page)
+  PLTR     0 messages pulled (0 pre-labeled, 1 page)
+  TSLA     0 messages pulled (0 pre-labeled, 1 page)
+
+0 records inserted into sentiment_records.
+Pulling StockTwits data for 12 tickers...
+
+Start time: 2026-07-11 16:15:54.144440
+======================================================================
+  AAPL     0 messages pulled (0 pre-labeled, 1 page)
+  ABNB     0 messages pulled (0 pre-labeled, 1 page)
+  ADBE     0 messages pulled (0 pre-labeled, 1 page)
+  AMZN     0 messages pulled (0 pre-labeled, 1 page)
+  CRWD     0 messages pulled (0 pre-labeled, 1 page)
+  DIS      0 messages pulled (0 pre-labeled, 1 page)
+  META     0 messages pulled (0 pre-labeled, 1 page)
+  MSFT     0 messages pulled (0 pre-labeled, 1 page)
+  NKE      0 messages pulled (0 pre-labeled, 1 page)
+  NVDA     0 messages pulled (0 pre-labeled, 1 page)
+  PLTR     0 messages pulled (0 pre-labeled, 1 page)
+  TSLA     0 messages pulled (0 pre-labeled, 1 page)
+
+0 records inserted into sentiment_records.
+Duration: 0:00:13.724208

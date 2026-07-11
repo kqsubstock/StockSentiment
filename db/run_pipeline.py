@@ -33,7 +33,7 @@ PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PROJECT_ROOT / "scrapers"))
 
 STEPS = [
-    # ("scrape", "stocktwits_scraper"),   -- commented out becuase the scraper is run by the task scheduler
+    # ("scrape", "stocktwits_scraper"),   -- scraper now runs on its own Task Scheduler job (every 2h), not as part of this daily pipeline
     ("link weeks", "compute_week_relative"),
     ("score sentiment", "finbert_vader_scorer"),
     ("flag relevance", "relevance_flagger"),
