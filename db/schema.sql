@@ -83,6 +83,12 @@ CREATE TABLE IF NOT EXISTS confidence_trajectory (
     UNIQUE(earnings_event_id, week_relative)
 );
 
+CREATE TABLE IF NOT EXISTS ticker_cursors (
+    ticker          TEXT PRIMARY KEY REFERENCES companies(ticker),
+    last_since_id   TEXT,
+    updated_at      TEXT NOT NULL DEFAULT (datetime('now'))
+);
+
 CREATE INDEX IF NOT EXISTS idx_sentiment_ticker_time ON sentiment_records(ticker, timestamp);
 CREATE INDEX IF NOT EXISTS idx_earnings_ticker_date ON earnings_events(ticker, earnings_date);
 CREATE INDEX IF NOT EXISTS idx_confidence_trajectory_event ON confidence_trajectory(earnings_event_id, week_relative);

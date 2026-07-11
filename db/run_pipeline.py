@@ -8,7 +8,7 @@ correct dependency order:
     4. relevance_flagger.py     — flag unflagged rows
     5. build_confidence_trajectory.py — extend Bayesian trajectories
     6. resolve_signal.py        — resolve per-event signal at week -2
-    7. resolve_earnings_outcomes.py — 
+    7. resolve_earnings_outcomes.py — fills in actual_outcome + actual_move_pct once each event's reaction window has passed
     8. pull_iv_history.py       — snapshot ATM IV per ticker for IV rank history
 
 Each step runs independently — a failure is logged and the pipeline
@@ -45,7 +45,8 @@ STEPS = [
 
 
 def run():
-    print(f"\n{'='*70}\nPipeline run started: {datetime.now().isoformat()}\n{'='*70}")
+    start_time = datetime.now()
+    print(f"\n{'='*70}\nPipeline run started: {start_time.isoformat()}\n{'='*70}")
     results = []
 
     for label, module_name in STEPS:
@@ -63,6 +64,10 @@ def run():
     for label, status in results:
         print(f"  [{status:6s}] {label}")
     print(f"{'='*70}\n")
+
+    end_time = datetime.now()
+    duration = end_time - start_time
+    print(f"\n{'='*70}\nPipeline runtime: {duration}\n{'='*70}")
 
     if any(status == "FAILED" for _, status in results):
         sys.exit(1)

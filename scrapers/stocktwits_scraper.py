@@ -31,18 +31,49 @@ SENTIMENT_MAP = {
 }
 
 
+def get_last_since_id(conn, ticker):
+    """Returns the stored high-water-mark ID for this ticker, or None
+    if it's never been scraped (first-run case)."""
+    cur = conn.cursor()
+    cur.execute("SELECT last_since_id FROM ticker_cursors WHERE ticker = ?", (ticker,))
+    row = cur.fetchone()
+    return row[0] if row else None
+
+
+def update_cursor(conn, ticker, newest_id):
+    """Upserts the new high-water mark after a successful pull."""
+    cur = conn.cursor()
+    cur.execute("""
+        INSERT INTO ticker_cursors (ticker, last_since_id, updated_at)
+        VALUES (?, ?, datetime('now'))
+        ON CONFLICT(ticker) DO UPDATE SET
+            last_since_id = excluded.last_since_id,
+            updated_at = excluded.updated_at
+    """, (ticker, newest_id))
+    conn.commit()
+
+
 def get_active_tickers(conn):
     cur = conn.cursor()
     cur.execute("SELECT ticker FROM companies WHERE active = 1 ORDER BY ticker")
     return [row[0] for row in cur.fetchall()]
 
 
-def fetch_stocktwits_messages(ticker):
-    """Hits the public symbol stream endpoint for one ticker."""
+def fetch_stocktwits_messages(ticker, since_id=None, max_id=None):
+    """One request to the symbol stream endpoint. Passing neither param
+    matches original baseline behavior (most recent ~30, no cursor)."""
     url = f"{API_BASE}/{ticker}.json"
-    resp = requests.get(url, headers=HEADERS, impersonate="chrome124", timeout=10)
+    params = {}
+    if since_id is not None:
+        params["since"] = since_id
+    if max_id is not None:
+        params["max"] = max_id
+
+    resp = requests.get(url, headers=HEADERS, impersonate="chrome124",
+                         params=params or None, timeout=10)
     resp.raise_for_status()
-    return resp.json().get("messages", [])
+    data = resp.json()
+    return data.get("messages", []), data.get("cursor", {})
 
 
 def parse_message(ticker, msg):
@@ -106,6 +137,69 @@ def export_to_csv(records, run_timestamp):
     return filepath
 
 
+MAX_PAGES = 10  # safety cap — 10 * 30 = 300 messages per ticker per run
+
+def fetch_all_new_messages(ticker, since_id):
+    """
+    Pulls everything newer than since_id, paging backward through
+    the gap in ~30-message batches if there's more than one page's
+    worth. Stops as soon as a page's oldest message reaches or
+    passes since_id — NOT when the API's 'more' flag runs out, since
+    StockTwits almost always has older history and 'more' rarely
+    goes False on its own.
+
+    Returns (messages, newest_id_seen, pages_pulled).
+    newest_id_seen is None if nothing new came back at all.
+    """
+    all_messages = []
+    newest_id_seen = None
+    max_id = None
+    pages_pulled = 0
+    since_id_int = int(since_id) if since_id is not None else None
+
+    while pages_pulled < MAX_PAGES:
+        messages, cursor = fetch_stocktwits_messages(ticker, since_id=since_id, max_id=max_id)
+        pages_pulled += 1
+
+        if not messages:
+            break
+
+        if newest_id_seen is None:
+            # Only the FIRST page's top message is the new high-water
+            # mark — later pages are older, backfilled messages.
+            newest_id_seen = str(messages[0]["id"])
+
+        if since_id_int is not None:
+            # Keep only messages strictly newer than the floor —
+            # a page can straddle the floor, part new / part already-seen.
+            in_range = [m for m in messages if int(m["id"]) > since_id_int]
+            all_messages.extend(in_range)
+
+            oldest_in_page = min(int(m["id"]) for m in messages)
+            if oldest_in_page <= since_id_int:
+                # Walked back past everything new — stop here regardless
+                # of what cursor['more'] says.
+                break
+        else:
+            # First-ever run for this ticker — no floor to check against,
+            # original backfill-until-more-runs-out behavior applies.
+            all_messages.extend(messages)
+
+        if not cursor.get("more"):
+            break
+
+        max_id = cursor.get("max")
+        if max_id is None:
+            break
+
+        time.sleep(1)  # courtesy delay between pages, same as between tickers
+
+    if pages_pulled >= MAX_PAGES:
+        print(f"  {ticker:6s} WARNING — hit {MAX_PAGES}-page cap, may not be fully caught up")
+
+    return all_messages, newest_id_seen, pages_pulled
+
+
 def run():
     conn = sqlite3.connect(DB_PATH)
     tickers = get_active_tickers(conn)
@@ -116,12 +210,16 @@ def run():
 
     for ticker in tickers:
         try:
-            messages = fetch_stocktwits_messages(ticker)
+            since_id = get_last_since_id(conn, ticker)
+            messages, newest_id_seen, pages_pulled = fetch_all_new_messages(ticker, since_id)
             records = [parse_message(ticker, m) for m in messages]
             all_records.extend(records)
 
             labeled = sum(1 for r in records if r["label"] is not None)
-            print(f"  {ticker:6s} {len(records):3d} messages pulled ({labeled} pre-labeled)")
+            print(f"  {ticker:6s} {len(records):3d} messages pulled ({labeled} pre-labeled, {pages_pulled} page{'s' if pages_pulled != 1 else ''})")
+
+            if newest_id_seen is not None:
+                update_cursor(conn, ticker, newest_id_seen)
 
         except requests.exceptions.RequestException as e:
             print(f"  {ticker:6s} FAILED — {e}")
