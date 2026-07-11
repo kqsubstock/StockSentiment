@@ -31,6 +31,7 @@ import sqlite3
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
+from earnings_cutoff import compute_cutoff_utc
 
 DB_PATH = Path(__file__).parent.parent / "data" / "pipeline.db"
 EASTERN = ZoneInfo("America/New_York")
@@ -43,19 +44,7 @@ def load_earnings_cutoffs(conn):
 
     by_ticker = {}
     for event_id, ticker, earnings_date_str, report_time in cur.fetchall():
-        event_date = datetime.strptime(earnings_date_str, "%Y-%m-%d").date()
-
-        if report_time == "AMC":
-            cutoff_date = event_date + timedelta(days=1)
-        else:  # 'BMO' or 'unknown' — conservative fail-safe
-            cutoff_date = event_date
-
-        cutoff_eastern = datetime(
-            cutoff_date.year, cutoff_date.month, cutoff_date.day,
-            0, 0, 0, tzinfo=EASTERN,
-        )
-        cutoff_utc = cutoff_eastern.astimezone(timezone.utc)
-
+        cutoff_utc = compute_cutoff_utc(earnings_date_str, report_time)
         by_ticker.setdefault(ticker, []).append((cutoff_utc, event_id))
 
     for ticker in by_ticker:
