@@ -8,7 +8,8 @@ correct dependency order:
     4. relevance_flagger.py     — flag unflagged rows
     5. build_confidence_trajectory.py — extend Bayesian trajectories
     6. resolve_signal.py        — resolve per-event signal at week -2
-    7. pull_iv_history.py       — snapshot ATM IV per ticker for IV rank history
+    7. resolve_earnings_outcomes.py — 
+    8. pull_iv_history.py       — snapshot ATM IV per ticker for IV rank history
 
 Each step runs independently — a failure is logged and the pipeline
 continues to the next step rather than aborting. Since every
@@ -38,6 +39,7 @@ STEPS = [
     ("flag relevance", "relevance_flagger"),
     ("build trajectories", "build_confidence_trajectory"),
     ("resolve signals", "resolve_signal"),
+    ("resolve outcomes", "resolve_earnings_outcomes"),
     ("pull IV history", "pull_iv_history"),
 ]
 
