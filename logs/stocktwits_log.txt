@@ -1,0 +1,66 @@
+^C^CPulling StockTwits data for 12 tickers...
+
+  AAPL     0 messages pulled (0 pre-labeled, 1 page)
+  ABNB     0 messages pulled (0 pre-labeled, 1 page)
+  ADBE     0 messages pulled (0 pre-labeled, 1 page)
+  AMZN     0 messages pulled (0 pre-labeled, 1 page)
+  CRWD     0 messages pulled (0 pre-labeled, 1 page)
+  DIS      0 messages pulled (0 pre-labeled, 1 page)
+  META     0 messages pulled (0 pre-labeled, 1 page)
+  MSFT     0 messages pulled (0 pre-labeled, 1 page)
+  NKE      0 messages pulled (0 pre-labeled, 1 page)
+  NVDA     2 messages pulled (0 pre-labeled, 1 page)
+  PLTR     0 messages pulled (0 pre-labeled, 1 page)
+  TSLA     0 messages pulled (0 pre-labeled, 1 page)
+
+2 records inserted into sentiment_records.
+CSV export written to: C:\Users\kyleq\OneDrive\Documents\StockSentiment\data\exports\stocktwits_20260711_071309.csv
+Pulling StockTwits data for 12 tickers...
+
+  AAPL   FAILED — Failed to perform, curl: (6) Could not resolve host: api.stocktwits.com. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+  ABNB   FAILED — Failed to perform, curl: (6) Could not resolve host: api.stocktwits.com. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+  ADBE   FAILED — Failed to perform, curl: (6) Could not resolve host: api.stocktwits.com. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+  AMZN   FAILED — Failed to perform, curl: (35) Recv failure: Connection was reset. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+  CRWD   FAILED — Failed to perform, curl: (35) Recv failure: Connection was reset. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+  DIS    FAILED — Failed to perform, curl: (35) Recv failure: Connection was reset. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+  META   FAILED — Failed to perform, curl: (35) Recv failure: Connection was reset. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+  MSFT   FAILED — Failed to perform, curl: (35) Recv failure: Connection was reset. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+  NKE    FAILED — Failed to perform, curl: (35) Recv failure: Connection was reset. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+  NVDA   FAILED — Failed to perform, curl: (35) Recv failure: Connection was reset. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+  PLTR   FAILED — Failed to perform, curl: (35) Recv failure: Connection was reset. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+  TSLA   FAILED — Failed to perform, curl: (35) Recv failure: Connection was reset. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+
+0 records inserted into sentiment_records.
+Pulling StockTwits data for 12 tickers...
+
+  AAPL   FAILED — Failed to perform, curl: (35) Recv failure: Connection was reset. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+  ABNB   FAILED — Failed to perform, curl: (35) Recv failure: Connection was reset. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+  ADBE   FAILED — Failed to perform, curl: (35) Recv failure: Connection was reset. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+  AMZN   FAILED — Failed to perform, curl: (35) Recv failure: Connection was reset. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+  CRWD   FAILED — Failed to perform, curl: (35) Recv failure: Connection was reset. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+  DIS    FAILED — Failed to perform, curl: (35) Recv failure: Connection was reset. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+  META   FAILED — Failed to perform, curl: (35) Recv failure: Connection was reset. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+  MSFT   FAILED — Failed to perform, curl: (35) Recv failure: Connection was reset. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+  NKE    FAILED — Failed to perform, curl: (35) Recv failure: Connection was reset. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+  NVDA   FAILED — Failed to perform, curl: (35) Recv failure: Connection was reset. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+  PLTR   FAILED — Failed to perform, curl: (35) Recv failure: Connection was reset. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+  TSLA   FAILED — Failed to perform, curl: (35) Recv failure: Connection was reset. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+
+0 records inserted into sentiment_records.
+Pulling StockTwits data for 12 tickers...
+
+  AAPL    31 messages pulled (11 pre-labeled, 2 pages)
+  ABNB     1 messages pulled (0 pre-labeled, 1 page)
+  ADBE     7 messages pulled (3 pre-labeled, 1 page)
+  AMZN    18 messages pulled (5 pre-labeled, 1 page)
+  CRWD    17 messages pulled (10 pre-labeled, 1 page)
+  DIS      5 messages pulled (2 pre-labeled, 1 page)
+  META    31 messages pulled (4 pre-labeled, 2 pages)
+  MSFT    31 messages pulled (11 pre-labeled, 2 pages)
+  NKE     12 messages pulled (8 pre-labeled, 1 page)
+  NVDA    31 messages pulled (10 pre-labeled, 2 pages)
+  PLTR    25 messages pulled (7 pre-labeled, 1 page)
+  TSLA    31 messages pulled (15 pre-labeled, 2 pages)
+
+212 records inserted into sentiment_records.
+CSV export written to: C:\Users\kyleq\OneDrive\Documents\StockSentiment\data\exports\stocktwits_20260711_192516.csv
