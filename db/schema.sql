@@ -39,6 +39,7 @@ CREATE TABLE IF NOT EXISTS earnings_events (
     date_confirmed          INTEGER NOT NULL DEFAULT 0,
     fiscal_quarter          TEXT,
     signal_direction        TEXT CHECK (signal_direction IN ('bullish', 'bearish', 'neutral', 'no_bet')),
+    shadow_signal_direction TEXT,
     confidence_score        REAL,
     strikes_selected        TEXT,
     premium_paid            REAL,

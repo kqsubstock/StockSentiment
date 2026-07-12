@@ -35,8 +35,8 @@ sys.path.insert(0, str(PROJECT_ROOT / "scrapers"))
 STEPS = [
     # ("scrape", "stocktwits_scraper"),   -- scraper now runs on its own Task Scheduler job (every 2h), not as part of this daily pipeline
     ("link weeks", "compute_week_relative"),
-    ("score sentiment", "finbert_vader_scorer"),
-    ("flag relevance", "relevance_flagger"),
+    ("flag relevance", "relevance_flagger"),      # moved up
+    ("score sentiment", "finbert_vader_scorer"),  # moved down
     ("build trajectories", "build_confidence_trajectory"),
     ("resolve signals", "resolve_signal"),
     ("resolve outcomes", "resolve_earnings_outcomes"),

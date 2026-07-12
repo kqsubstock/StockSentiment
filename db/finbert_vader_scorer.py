@@ -91,7 +91,13 @@ def score_record(raw_text):
 
 def get_unlabeled_records(conn):
     cur = conn.cursor()
-    cur.execute("SELECT id, raw_text FROM sentiment_records WHERE label IS NULL")
+    cur.execute(
+        """
+        SELECT id, raw_text FROM sentiment_records
+        WHERE label IS NULL
+          AND (relevance_flag IS NULL OR relevance_flag = 0)
+        """
+    )
     return cur.fetchall()
 
 

@@ -170,3 +170,83 @@ Start time: 2026-07-11 16:15:54.144440
 
 0 records inserted into sentiment_records.
 Duration: 0:00:13.724208
+Pulling StockTwits data for 12 tickers...
+
+Start time: 2026-07-11 17:33:47.128334
+======================================================================
+  AAPL     6 messages pulled (3 pre-labeled, 1 page)
+  ABNB     0 messages pulled (0 pre-labeled, 1 page)
+  ADBE     0 messages pulled (0 pre-labeled, 1 page)
+  AMZN     1 messages pulled (0 pre-labeled, 1 page)
+  CRWD     0 messages pulled (0 pre-labeled, 1 page)
+  DIS      2 messages pulled (0 pre-labeled, 1 page)
+  META     8 messages pulled (2 pre-labeled, 1 page)
+  MSFT     4 messages pulled (1 pre-labeled, 1 page)
+  NKE      1 messages pulled (1 pre-labeled, 1 page)
+  NVDA     9 messages pulled (2 pre-labeled, 1 page)
+  PLTR     3 messages pulled (3 pre-labeled, 1 page)
+  TSLA    11 messages pulled (3 pre-labeled, 1 page)
+
+42 records inserted into sentiment_records.
+CSV export written to: C:\Users\kyleq\OneDrive\Documents\StockSentiment\data\exports\stocktwits_20260711_223347.csv
+Duration: 0:00:13.911141
+Pulling StockTwits data for 12 tickers...
+
+Start time: 2026-07-11 18:00:01.842354
+======================================================================
+  AAPL     3 messages pulled (1 pre-labeled, 1 page)
+  ABNB     0 messages pulled (0 pre-labeled, 1 page)
+  ADBE     0 messages pulled (0 pre-labeled, 1 page)
+  AMZN     0 messages pulled (0 pre-labeled, 1 page)
+  CRWD     0 messages pulled (0 pre-labeled, 1 page)
+  DIS      0 messages pulled (0 pre-labeled, 1 page)
+  META     2 messages pulled (2 pre-labeled, 1 page)
+  MSFT     2 messages pulled (0 pre-labeled, 1 page)
+  NKE      0 messages pulled (0 pre-labeled, 1 page)
+  NVDA     4 messages pulled (2 pre-labeled, 1 page)
+  PLTR     0 messages pulled (0 pre-labeled, 1 page)
+  TSLA     5 messages pulled (1 pre-labeled, 1 page)
+
+12 records inserted into sentiment_records.
+CSV export written to: C:\Users\kyleq\OneDrive\Documents\StockSentiment\data\exports\stocktwits_20260711_230001.csv
+Duration: 0:00:13.924136
+Pulling StockTwits data for 12 tickers...
+
+Start time: 2026-07-11 20:00:01.917887
+======================================================================
+  AAPL    15 messages pulled (2 pre-labeled, 1 page)
+  ABNB     0 messages pulled (0 pre-labeled, 1 page)
+  ADBE     0 messages pulled (0 pre-labeled, 1 page)
+  AMZN     1 messages pulled (1 pre-labeled, 1 page)
+  CRWD     1 messages pulled (0 pre-labeled, 1 page)
+  DIS      1 messages pulled (1 pre-labeled, 1 page)
+  META    12 messages pulled (3 pre-labeled, 1 page)
+  MSFT    13 messages pulled (4 pre-labeled, 1 page)
+  NKE      3 messages pulled (2 pre-labeled, 1 page)
+  NVDA    30 messages pulled (14 pre-labeled, 1 page)
+  PLTR     8 messages pulled (3 pre-labeled, 1 page)
+  TSLA    17 messages pulled (3 pre-labeled, 1 page)
+
+83 records inserted into sentiment_records.
+CSV export written to: C:\Users\kyleq\OneDrive\Documents\StockSentiment\data\exports\stocktwits_20260712_010001.csv
+Duration: 0:00:14.705280
+Pulling StockTwits data for 12 tickers...
+
+Start time: 2026-07-11 22:00:01.932676
+======================================================================
+  AAPL     9 messages pulled (1 pre-labeled, 1 page)
+  ABNB     0 messages pulled (0 pre-labeled, 1 page)
+  ADBE     0 messages pulled (0 pre-labeled, 1 page)
+  AMZN     2 messages pulled (0 pre-labeled, 1 page)
+  CRWD     0 messages pulled (0 pre-labeled, 1 page)
+  DIS      0 messages pulled (0 pre-labeled, 1 page)
+  META     6 messages pulled (2 pre-labeled, 1 page)
+  MSFT    10 messages pulled (4 pre-labeled, 1 page)
+  NKE      1 messages pulled (0 pre-labeled, 1 page)
+  NVDA    27 messages pulled (10 pre-labeled, 1 page)
+  PLTR     4 messages pulled (2 pre-labeled, 1 page)
+  TSLA    21 messages pulled (7 pre-labeled, 1 page)
+
+62 records inserted into sentiment_records.
+CSV export written to: C:\Users\kyleq\OneDrive\Documents\StockSentiment\data\exports\stocktwits_20260712_030001.csv
+Duration: 0:00:14.580104

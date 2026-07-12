@@ -18,6 +18,10 @@ row — weeks with no qualifying evidence are skipped rather than storing
 a duplicate of the prior week's unchanged posterior. Downstream readers
 must forward-fill gaps at query/plot time.
 
+Only StockTwits evidence counts toward trajectories/signals — other 
+sources are collected and scored but held out until validated against 
+a resolved calibration cycle.
+
 Safe to re-run: INSERT OR IGNORE against UNIQUE(earnings_event_id,
 week_relative), so re-running after fresh scraping only adds new rows
 for weeks that now have qualifying data.
@@ -41,7 +45,6 @@ def get_all_earnings_events(conn):
 
 
 def get_weekly_counts(conn, earnings_event_id):
-    """Returns {week_relative: (bullish_count, bearish_count)} for one event."""
     cur = conn.cursor()
     cur.execute(
         """
@@ -52,6 +55,8 @@ def get_weekly_counts(conn, earnings_event_id):
         WHERE earnings_event_id = ?
           AND week_relative BETWEEN ? AND ?
           AND label IN ('bullish', 'bearish')
+          AND source = 'stocktwits'
+          AND (relevance_flag IS NULL OR relevance_flag = 0)
         GROUP BY week_relative
         """,
         (earnings_event_id, WEEK_START, WEEK_END),
