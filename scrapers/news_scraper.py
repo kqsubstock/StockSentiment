@@ -138,18 +138,18 @@ def parse_article(ticker, article):
     title = (article.get("title") or "").strip()
     description = (article.get("description") or "").strip()
     raw_text = f"{title}\n\n{description}" if description else title
+    source_name = (article.get("source") or {}).get("name")   # NEW
 
     return {
         "ticker": ticker,
         "source": "news",
-        "source_message_id": article.get("url"),   # naturally unique per article
-        "timestamp": article.get("publishedAt"),    # ISO 8601 UTC — same format
-                                                       # compute_week_relative.py already parses
+        "source_message_id": article.get("url"),
+        "timestamp": article.get("publishedAt"),
         "raw_text": raw_text,
         "sentiment_score": None,
-        "label": None,     # scored later by finbert_vader_scorer.py — same as
-                             # untagged StockTwits posts, no separate scorer needed
+        "label": None,
         "scored_by": None,
+        "source_name": source_name,   # NEW
     }
 
 
@@ -158,9 +158,9 @@ def insert_records(conn, records):
     cur.executemany(
         """
         INSERT OR IGNORE INTO sentiment_records
-            (ticker, source, source_message_id, timestamp, raw_text, sentiment_score, label, scored_by)
+            (ticker, source, source_message_id, timestamp, raw_text, sentiment_score, label, scored_by, source_name)
         VALUES
-            (:ticker, :source, :source_message_id, :timestamp, :raw_text, :sentiment_score, :label, :scored_by)
+            (:ticker, :source, :source_message_id, :timestamp, :raw_text, :sentiment_score, :label, :scored_by, :source_name)
         """,
         records,
     )

@@ -250,3 +250,23 @@ Start time: 2026-07-11 22:00:01.932676
 62 records inserted into sentiment_records.
 CSV export written to: C:\Users\kyleq\OneDrive\Documents\StockSentiment\data\exports\stocktwits_20260712_030001.csv
 Duration: 0:00:14.580104
+Pulling StockTwits data for 12 tickers...
+
+Start time: 2026-07-12 00:01:11.711046
+======================================================================
+  AAPL     0 messages pulled (0 pre-labeled, 1 page)
+  ABNB     0 messages pulled (0 pre-labeled, 1 page)
+  ADBE     0 messages pulled (0 pre-labeled, 1 page)
+  AMZN     0 messages pulled (0 pre-labeled, 1 page)
+  CRWD     0 messages pulled (0 pre-labeled, 1 page)
+  DIS      0 messages pulled (0 pre-labeled, 1 page)
+  META     1 messages pulled (1 pre-labeled, 1 page)
+  MSFT     3 messages pulled (1 pre-labeled, 1 page)
+  NKE      0 messages pulled (0 pre-labeled, 1 page)
+  NVDA    10 messages pulled (2 pre-labeled, 1 page)
+  PLTR     3 messages pulled (3 pre-labeled, 1 page)
+  TSLA     5 messages pulled (2 pre-labeled, 1 page)
+
+20 records inserted into sentiment_records.
+CSV export written to: C:\Users\kyleq\OneDrive\Documents\StockSentiment\data\exports\stocktwits_20260712_050111.csv
+Duration: 0:00:13.934902

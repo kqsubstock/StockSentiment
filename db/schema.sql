@@ -14,6 +14,7 @@ CREATE TABLE IF NOT EXISTS sentiment_records (
     source_message_id       TEXT,   
     timestamp               TEXT NOT NULL,
     raw_text                TEXT,
+    source_name             TEXT,
     sentiment_score         REAL,
     finbert_raw             REAL,       -- FinBERT-only score, pre-blend (signed confidence, -1 to 1)
     vader_raw               REAL,       -- VADER-only compound score, pre-blend (-1 to 1)
