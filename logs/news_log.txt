@@ -1,0 +1,19 @@
+Pulling News data for 12 tickers...
+
+Start time: 2026-07-12T03:43:41.235094+00:00
+======================================================================
+  AAPL     0 articles pulled (from=2026-07-11)
+  ABNB     0 articles pulled (from=2026-07-11)
+  ADBE     0 articles pulled (from=2026-07-11)
+  AMZN     0 articles pulled (from=2026-07-11)
+  CRWD     0 articles pulled (from=2026-07-11)
+  DIS      0 articles pulled (from=2026-07-11)
+  META     0 articles pulled (from=2026-07-11)
+  MSFT     0 articles pulled (from=2026-07-11)
+  NKE      0 articles pulled (from=2026-07-11)
+  NVDA     0 articles pulled (from=2026-07-11)
+  PLTR     0 articles pulled (from=2026-07-11)
+  TSLA     0 articles pulled (from=2026-07-11)
+
+0 records inserted into sentiment_records (source='news').
+NewsAPI requests used this run: 12 (free tier cap: 100/day)
