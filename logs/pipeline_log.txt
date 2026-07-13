@@ -158,3 +158,164 @@ Pipeline summary:
 ======================================================================
 Pipeline runtime: 0:00:59.092201
 ======================================================================
+
+======================================================================
+Pipeline run started: 2026-07-12T20:26:01.915213
+======================================================================
+
+--- link weeks (compute_week_relative.py) ---
+Processed 6208 sentiment_records rows.
+  Linked:   6208
+  Unlinked: 0 (no future earnings event found for that ticker)
+
+week_relative distribution:
+   -13: 70
+   -12: 440
+   -11: 50
+   -10: 473
+    -9: 323
+    -8: 163
+    -7: 710
+    -6: 217
+    -5: 280
+    -4: 1011
+    -3: 1846
+    -2: 576
+    -1: 49
+
+--- flag relevance (relevance_flagger.py) ---
+Checking relevance for 0 unflagged records...
+
+Flagged 0 of 0 records as low-relevance.
+
+Flagged rate by ticker:
+  AAPL    152/ 605  (25.1%)
+  ABNB     76/ 429  (17.7%)
+  ADBE     63/ 442  (14.3%)
+  AMZN    185/ 488  (37.9%)
+  CRWD    117/ 456  (25.7%)
+  DIS      62/ 437  (14.2%)
+  META    139/ 568  (24.5%)
+  MSFT     69/ 517  (13.3%)
+  NKE      37/ 454  (8.1%)
+  NVDA    206/ 660  (31.2%)
+  PLTR     86/ 547  (15.7%)
+  TSLA    163/ 605  (26.9%)
+
+--- score sentiment (finbert_vader_scorer.py) ---
+Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]Loading weights: 100%|##########| 201/201 [00:00<00:00, 19507.04it/s]
+'[WinError 10054] An existing connection was forcibly closed by the remote host' thrown while requesting HEAD https://huggingface.co/ProsusAI/finbert/resolve/main/processor_config.json
+Retrying in 1s [Retry 1/5].
+Scoring 0 unlabeled records...
+
+Scored 0 records. 0 flagged for idiom risk, 0 flagged for model disagreement.
+
+Label distribution (this run):
+  bearish    608
+  bullish    774
+  neutral    2038
+
+--- build trajectories (build_confidence_trajectory.py) ---
+Building confidence trajectories for 33 earnings events...
+
+  AAPL   event_id=   3  2 weeks with evidence, latest posterior_mean=0.536
+  ABNB   event_id=  19  3 weeks with evidence, latest posterior_mean=0.656
+  ABNB   event_id=  20  10 weeks with evidence, latest posterior_mean=0.717
+  ADBE   event_id=  28  3 weeks with evidence, latest posterior_mean=0.661
+  AMZN   event_id=  60  2 weeks with evidence, latest posterior_mean=0.860
+  CRWD   event_id=  25  3 weeks with evidence, latest posterior_mean=0.631
+  DIS    event_id=  15  3 weeks with evidence, latest posterior_mean=0.650
+  META   event_id=  59  2 weeks with evidence, latest posterior_mean=0.712
+  MSFT   event_id=  58  2 weeks with evidence, latest posterior_mean=0.466
+  NKE    event_id=  61  2 weeks with evidence, latest posterior_mean=0.771
+  NVDA   event_id=  12  2 weeks with evidence, latest posterior_mean=0.778
+  PLTR   event_id=  17  1 weeks with evidence, latest posterior_mean=0.713
+  TSLA   event_id=   9  2 weeks with evidence, latest posterior_mean=0.657
+
+13/33 events had at least one week of evidence.
+0 rows inserted into confidence_trajectory.
+
+--- resolve signals (resolve_signal.py) ---
+Resolving signals for 33 earnings events...
+
+  AAPL   event_id=  1  no_bet    conf=  N/A  evidence=  0  (no evidence by week -2)
+  AAPL   event_id=  2  no_bet    conf=  N/A  evidence=  0  (no evidence by week -2)
+  AAPL   event_id=  3  no_bet    conf=0.538  evidence=180  (no_bet, as of week -3)
+  ABNB   event_id= 18  no_bet    conf=  N/A  evidence=  0  (no evidence by week -2)
+  ABNB   event_id= 19  bullish   conf=0.721  evidence= 32  (bullish, as of week -2)
+  ABNB   event_id= 20  bullish   conf=0.710  evidence=120  (bullish, as of week -4)
+  ADBE   event_id= 26  no_bet    conf=  N/A  evidence=  0  (no evidence by week -2)
+  ADBE   event_id= 27  no_bet    conf=  N/A  evidence=  0  (no evidence by week -2)
+  ADBE   event_id= 28  bullish   conf=0.665  evidence=177  (bullish, as of week -9)
+  AMZN   event_id=  6  no_bet    conf=  N/A  evidence=  0  (no evidence by week -2)
+  AMZN   event_id= 60  bullish   conf=0.856  evidence=134  (bullish, as of week -3)
+  CRWD   event_id= 23  no_bet    conf=  N/A  evidence=  0  (no evidence by week -2)
+  CRWD   event_id= 24  no_bet    conf=  N/A  evidence=  0  (no evidence by week -2)
+  CRWD   event_id= 25  no_bet    conf=0.635  evidence=151  (no_bet, as of week -8)
+  DIS    event_id= 13  no_bet    conf=  N/A  evidence=  0  (no evidence by week -2)
+  DIS    event_id= 14  no_bet    conf=  N/A  evidence=  0  (no evidence by week -2)
+  DIS    event_id= 15  no_bet    conf=0.650  evidence=129  (no_bet, as of week -5)
+  META   event_id= 57  no_bet    conf=  N/A  evidence=  0  (no evidence by week -2)
+  META   event_id=  5  no_bet    conf=  N/A  evidence=  0  (no evidence by week -2)
+  META   event_id= 59  bullish   conf=0.723  evidence=173  (bullish, as of week -3)
+  MSFT   event_id=  4  no_bet    conf=  N/A  evidence=  0  (no evidence by week -2)
+  MSFT   event_id= 58  no_bet    conf=0.476  evidence=205  (no_bet, as of week -3)
+  NKE    event_id= 21  no_bet    conf=  N/A  evidence=  0  (no evidence by week -2)
+  NKE    event_id= 22  no_bet    conf=  N/A  evidence=  0  (no evidence by week -2)
+  NKE    event_id= 61  bullish   conf=0.766  evidence=185  (bullish, as of week -12)
+  NVDA   event_id= 10  no_bet    conf=  N/A  evidence=  0  (no evidence by week -2)
+  NVDA   event_id= 11  no_bet    conf=  N/A  evidence=  0  (no evidence by week -2)
+  NVDA   event_id= 12  bullish   conf=0.771  evidence=225  (bullish, as of week -7)
+  PLTR   event_id= 16  no_bet    conf=  N/A  evidence=  0  (no evidence by week -2)
+  PLTR   event_id= 17  bullish   conf=0.707  evidence=211  (bullish, as of week -4)
+  TSLA   event_id=  7  no_bet    conf=  N/A  evidence=  0  (no evidence by week -2)
+  TSLA   event_id=  8  no_bet    conf=  N/A  evidence=  0  (no evidence by week -2)
+  TSLA   event_id=  9  no_bet    conf=0.643  evidence=157  (no_bet, as of week -2)
+
+--- resolve outcomes (resolve_earnings_outcomes.py) ---
+Checking 12 unresolved earnings events...
+
+  TSLA   2026-07-22  -- still pending
+  META   2026-07-29  -- still pending
+  MSFT   2026-07-29  -- still pending
+  AAPL   2026-07-30  -- still pending
+  AMZN   2026-07-30  -- still pending
+  PLTR   2026-08-03  -- still pending
+  ABNB   2026-08-05  -- still pending
+  DIS    2026-08-12  -- still pending
+  NVDA   2026-08-26  -- still pending
+  CRWD   2026-09-02  -- still pending
+  ADBE   2026-09-10  -- still pending
+  NKE    2026-09-29  -- still pending
+
+Resolved 0 of 12 checked events.
+
+--- pull IV history (pull_iv_history.py) ---
+AAPL: FAILED — ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+MSFT: FAILED — ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+META: FAILED — ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+AMZN: FAILED — ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+TSLA: FAILED — ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+NVDA: FAILED — ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+DIS: FAILED — ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+PLTR: FAILED — ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+ABNB: FAILED — ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+NKE: FAILED — ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+CRWD: FAILED — ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+ADBE: FAILED — ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+======================================================================
+Pipeline summary:
+  [OK    ] link weeks
+  [OK    ] flag relevance
+  [OK    ] score sentiment
+  [OK    ] build trajectories
+  [OK    ] resolve signals
+  [OK    ] resolve outcomes
+  [OK    ] pull IV history
+======================================================================
+
+
+======================================================================
+Pipeline runtime: 0:00:14.429071
+======================================================================

@@ -270,3 +270,43 @@ Start time: 2026-07-12 00:01:11.711046
 20 records inserted into sentiment_records.
 CSV export written to: C:\Users\kyleq\OneDrive\Documents\StockSentiment\data\exports\stocktwits_20260712_050111.csv
 Duration: 0:00:13.934902
+Pulling StockTwits data for 12 tickers...
+
+Start time: 2026-07-12 16:04:04.259791
+======================================================================
+  AAPL    15 messages pulled (4 pre-labeled, 1 page)
+  ABNB     0 messages pulled (0 pre-labeled, 1 page)
+  ADBE     0 messages pulled (0 pre-labeled, 1 page)
+  AMZN   FAILED — Failed to perform, curl: (28) Connection timed out after 15357350 milliseconds. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+  CRWD   FAILED — Failed to perform, curl: (35) Recv failure: Connection was reset. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+  DIS    FAILED — Failed to perform, curl: (35) Recv failure: Connection was reset. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+  META   FAILED — Failed to perform, curl: (35) Recv failure: Connection was reset. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+  MSFT   FAILED — Failed to perform, curl: (35) Recv failure: Connection was reset. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+  NKE    FAILED — Failed to perform, curl: (35) Recv failure: Connection was reset. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+  NVDA   FAILED — Failed to perform, curl: (35) Recv failure: Connection was reset. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+  PLTR   FAILED — Failed to perform, curl: (35) Recv failure: Connection was reset. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+  TSLA   FAILED — Failed to perform, curl: (35) Recv failure: Connection was reset. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+
+12 records inserted into sentiment_records.
+CSV export written to: C:\Users\kyleq\OneDrive\Documents\StockSentiment\data\exports\stocktwits_20260712_210404.csv
+Duration: 4:16:13.765956
+Pulling StockTwits data for 12 tickers...
+
+Start time: 2026-07-13 04:26:55.988112
+======================================================================
+  AAPL    31 messages pulled (5 pre-labeled, 2 pages)
+  ABNB     4 messages pulled (0 pre-labeled, 1 page)
+  ADBE     7 messages pulled (3 pre-labeled, 1 page)
+  AMZN    23 messages pulled (9 pre-labeled, 1 page)
+  CRWD    10 messages pulled (4 pre-labeled, 1 page)
+  DIS      5 messages pulled (3 pre-labeled, 1 page)
+  META    31 messages pulled (8 pre-labeled, 2 pages)
+  MSFT    31 messages pulled (12 pre-labeled, 2 pages)
+  NKE     15 messages pulled (5 pre-labeled, 1 page)
+  NVDA    31 messages pulled (10 pre-labeled, 2 pages)
+  PLTR    31 messages pulled (7 pre-labeled, 2 pages)
+  TSLA    31 messages pulled (8 pre-labeled, 2 pages)
+
+217 records inserted into sentiment_records.
+CSV export written to: C:\Users\kyleq\OneDrive\Documents\StockSentiment\data\exports\stocktwits_20260713_092655.csv
+Duration: 0:00:23.675664

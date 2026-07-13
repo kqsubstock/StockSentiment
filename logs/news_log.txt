@@ -17,3 +17,22 @@ Start time: 2026-07-12T03:43:41.235094+00:00
 
 0 records inserted into sentiment_records (source='news').
 NewsAPI requests used this run: 12 (free tier cap: 100/day)
+Pulling News data for 12 tickers...
+
+Start time: 2026-07-13T01:26:02.142906+00:00
+======================================================================
+  AAPL   FAILED — ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+  ABNB   FAILED — ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+  ADBE   FAILED — ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+  AMZN   FAILED — ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+  CRWD   FAILED — ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+  DIS    FAILED — ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+  META   FAILED — ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+  MSFT   FAILED — ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+  NKE    FAILED — ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+  NVDA   FAILED — ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+  PLTR   FAILED — ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+  TSLA   FAILED — ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+0 records inserted into sentiment_records (source='news').
+NewsAPI requests used this run: 0 (free tier cap: 100/day)
